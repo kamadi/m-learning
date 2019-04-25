@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#26b4f2</color>
+    <color name="colorAccent">#26b4f2</color>
+
+    <color name="emerald_green">#00941e</color>
+    <color name="lipstick">#e11632</color>
+    <color name="orange">#FF8800</color>
+
+    <color name="white">#fff</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="grey">#afb0c2</color>
+    <color name="black_light">#34383b</color>
+
+    <color name="background_grey">#f3f4f9</color>
+    <color name="background_grey_toolbar">#E6f3f4f9</color>
+    <color name="background_dark">#34383b</color>
+    <color name="background_loading_layout">#CCFFFFFF</color>
+    <color name="toolbar_blue">#F234383b</color>
+    <color name="toolbar_grey_title">#6e6f71</color>
+</resources>

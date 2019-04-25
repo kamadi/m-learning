@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardLayout"
+    android:layout_marginTop="@dimen/margin_small_extra"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/InputTitleTextView"
+        android:layout_marginTop="@dimen/margin_small"
+        android:lineSpacingExtra="8dp"
+        tools:text="Вы зарегистрированы в оффшорных зонах?" />
+
+    <Button
+        android:id="@+id/answer1Button"
+        style="@style/QuestionButton"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_width="match_parent"
+        tools:text="Answer 1"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/answer2Button"
+        style="@style/QuestionButton"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_width="match_parent"
+        tools:text="Answer 1"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/answer3Button"
+        style="@style/QuestionButton"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_width="match_parent"
+        tools:text="Answer 1"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/answer4Button"
+        style="@style/QuestionButton"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:layout_width="match_parent"
+        tools:text="Answer 1"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
