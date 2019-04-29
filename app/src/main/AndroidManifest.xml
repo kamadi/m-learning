@@ -30,6 +30,10 @@
         <activity
             android:name=".view.question.QuestionsActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.question.QuestionResultActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

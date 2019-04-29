@@ -69,19 +69,36 @@ class QuestionView : LinearLayout {
         }
     }
 
+    private fun validateAnswer() {
+        if (question != null) {
+            if (question!!.type == QuestionType.DEFAULT) {
+                question?.userAnswerIndex = answerButtons.indexOfFirst { it.isSelected }
+            } else if (question!!.type == QuestionType.MULTIPLE) {
+                val indexes = mutableListOf<Int>()
+                for (i in 0 until answerButtons.size) {
+                    if (answerButtons[i].isSelected) {
+                        indexes.add(i)
+                    }
+                }
+                question?.userAnswerIndexes = indexes
+            }
+        }
+    }
+
     private inner class ClickListener(val index: Int) : OnClickListener {
 
         private val button = answerButtons[index]
 
         override fun onClick(v: View?) {
-            button.isSelected = true
-            if (question?.type == QuestionType.DEFAULT) {
+            button.isSelected = !button.isSelected
+            if (question?.type == QuestionType.DEFAULT && button.isSelected) {
                 for (i in 0 until answerButtons.size) {
                     if (i != index) {
                         answerButtons[i].isSelected = false
                     }
                 }
             }
+            validateAnswer()
         }
     }
 }
