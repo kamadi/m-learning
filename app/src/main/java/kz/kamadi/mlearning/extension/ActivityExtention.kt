@@ -3,6 +3,8 @@ package kz.kamadi.mlearning.extension
 import android.app.Activity
 import android.graphics.Point
 import android.util.TypedValue
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 
 val Activity.deviceHeight: Int
     get() {
@@ -38,3 +40,11 @@ val Activity.statusBarHeight: Int
         }
         return result
     }
+
+fun FragmentActivity.backToRoot(): Boolean {
+    if (canPerformTransaction && supportFragmentManager.isNotEmpty) {
+        supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        return false
+    }
+    return true
+}

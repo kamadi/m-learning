@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".view.chapter.ChapterActivity"
+            android:name=".MainActivity"
             android:label="@string/chapters"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -21,19 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.topic.TopicsActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.topic.TopicActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.question.QuestionsActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".view.question.QuestionResultActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

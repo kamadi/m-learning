@@ -4,7 +4,39 @@ object DataManager {
 
     val chapters: List<Chapter> = listOf(
         Chapter(
-            1, "Chapter 1", listOf(Question("", listOf(), listOf()))
+            1, "Chapter 1", listOf(
+                Question(
+                    "Question 1",
+                    listOf(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                        "Answer 2",
+                        "Answer 3",
+                        "Answer 4"
+                    ),
+                    listOf(0)
+                ),
+                Question(
+                    "Question 2 multiple",
+                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                    listOf(0, 1),
+                    type = QuestionType.MULTIPLE
+                ),
+                Question(
+                    "Question 3",
+                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                    listOf(2)
+                ),
+                Question(
+                    "Question 4",
+                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                    listOf(3)
+                ),
+                Question(
+                    "Question 5",
+                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                    listOf(3)
+                )
+            )
         ),
         Chapter(
             2, "Chapter 2",
@@ -28,33 +60,33 @@ object DataManager {
 
     val questions = mutableMapOf<Int, List<Question>>()
 
-    val topicResults = mutableMapOf<Topic, List<QuestionResult>>()
+    val topicResults = mutableMapOf<Int, List<QuestionResult>>()
 
     init {
         topics[1] = listOf(
             Topic(
                 11,
-                "Topic 1",
+                "1Topic 1",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
             ),
             Topic(
                 12,
-                "Topic 2",
+                "2Topic 2",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
             ),
             Topic(
                 13,
-                "Topic 3",
+                "3Topic 3",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
             ),
             Topic(
                 14,
-                "Topic 4",
+                "4Topic 4",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
             ),
             Topic(
                 15,
-                "Topic 5",
+                "5Topic 5",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
             )
         )
@@ -171,6 +203,54 @@ object DataManager {
                 "Question 5",
                 listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
                 listOf(3)
+            )
+        )
+        questions[12] = listOf(
+            Question(
+                "Question 1",
+                listOf(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ),
+                listOf(0)
+            )
+        )
+        questions[13] = listOf(
+            Question(
+                "Question 1",
+                listOf(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ),
+                listOf(0)
+            )
+        )
+        questions[14] = listOf(
+            Question(
+                "Question 1",
+                listOf(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ),
+                listOf(0)
+            )
+        )
+        questions[15] = listOf(
+            Question(
+                "Question 1",
+                listOf(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                    "Answer 2",
+                    "Answer 3",
+                    "Answer 4"
+                ),
+                listOf(0)
             )
         )
     }

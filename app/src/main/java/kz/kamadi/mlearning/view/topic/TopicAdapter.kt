@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_chapter.view.*
 import kz.kamadi.mlearning.R
 import kz.kamadi.mlearning.extension.inflate
-import kz.kamadi.mlearning.model.Chapter
+import kz.kamadi.mlearning.model.DataManager
 import kz.kamadi.mlearning.model.Topic
 
 class TopicAdapter(
@@ -43,5 +43,15 @@ class TopicViewHolder(
     fun bind(topic: Topic) {
         this.topic = topic
         itemView.titleTextView.text = topic.title
+        itemView.titleTextView.setCompoundDrawablesWithIntrinsicBounds(
+            0,
+            0,
+            if (DataManager.topicResults[topic.id] != null) {
+                R.drawable.ic_check_black_24dp
+            } else {
+                R.drawable.ic_next_grey
+            },
+            0
+        )
     }
 }

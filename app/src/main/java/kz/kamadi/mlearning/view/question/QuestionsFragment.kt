@@ -1,19 +1,21 @@
 package kz.kamadi.mlearning.view.question
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import androidx.core.os.bundleOf
 import kotlinx.android.synthetic.main.activity_questions.*
 import kz.kamadi.mlearning.R
+import kz.kamadi.mlearning.extension.inTransaction
 import kz.kamadi.mlearning.extension.showMessage
+import kz.kamadi.mlearning.extension.supportActionBar
 import kz.kamadi.mlearning.model.DataManager
 import kz.kamadi.mlearning.model.Question
 import kz.kamadi.mlearning.model.QuestionResult
 import kz.kamadi.mlearning.model.Topic
+import kz.kamadi.mlearning.view.BaseFragment
 
-class QuestionsActivity : AppCompatActivity() {
+class QuestionsFragment : BaseFragment() {
 
     private var topic: Topic? = null
 
@@ -23,22 +25,30 @@ class QuestionsActivity : AppCompatActivity() {
 
         private const val TOPIC = "topic"
 
-        fun start(context: Context, topic: Topic) {
-            context.startActivity(Intent(context, QuestionsActivity::class.java).apply {
-                putExtra(TOPIC, topic)
-            })
+        fun newInstance(topic: Topic): QuestionsFragment {
+            return QuestionsFragment().apply {
+                arguments = bundleOf(Pair(TOPIC, topic))
+            }
         }
     }
 
+    override val layoutId = R.layout.activity_questions
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_questions)
-        topic = intent.extras?.getParcelable(TOPIC)
-        title = topic?.title
+        topic = arguments?.getParcelable(TOPIC)
+        supportActionBar?.title = topic?.title
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         recyclerView.isNestedScrollingEnabled = false
         if (topic != null) {
             questions = DataManager.questions[topic!!.id]
             if (questions != null) {
+                questions!!.forEach {
+                    it.clear()
+                }
                 recyclerView.adapter = QuestionAdapter(questions!!)
             }
         }
@@ -63,8 +73,14 @@ class QuestionsActivity : AppCompatActivity() {
                 }
                 if (results.size == questions!!.size) {
                     Log.e("total", (total / questions!!.size).toString())
-                    DataManager.topicResults[topic!!] = results
-                    QuestionResultActivity.start(this, topic!!, total / questions!!.size)
+                    DataManager.topicResults[topic!!.id] = results
+                    activity?.inTransaction {
+                        replace(
+                            R.id.root,
+                            QuestionResultFragment.newInstance(topic!!, total / questions!!.size)
+                        )
+                        addToBackStack(null)
+                    }
                 }
             }
         }

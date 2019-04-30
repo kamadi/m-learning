@@ -1,8 +1,12 @@
 package kz.kamadi.mlearning.model
 
 import android.os.Parcelable
+import android.util.Log
+import android.view.View
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
+import kz.kamadi.mlearning.R
+import kz.kamadi.mlearning.extension.showMessage
 
 @Parcelize
 data class Question(
@@ -41,6 +45,11 @@ data class Question(
 
     val hasAnswer: Boolean
         get() = userAnswerIndexes.isNotEmpty() || userAnswerIndex != -1
+
+    fun clear() {
+        userAnswerIndex = -1
+        userAnswerIndexes = listOf()
+    }
 }
 
 data class QuestionResult(
