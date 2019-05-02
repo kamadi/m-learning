@@ -9,7 +9,9 @@ import kz.kamadi.mlearning.R
 import kz.kamadi.mlearning.extension.inTransaction
 import kz.kamadi.mlearning.extension.showMessage
 import kz.kamadi.mlearning.extension.supportActionBar
+import kz.kamadi.mlearning.helper.Analyzer
 import kz.kamadi.mlearning.model.Chapter
+import kz.kamadi.mlearning.model.DataManager
 import kz.kamadi.mlearning.model.Question
 import kz.kamadi.mlearning.model.QuestionResult
 import kz.kamadi.mlearning.view.BaseFragment
@@ -67,6 +69,7 @@ class ChapterExamFragment : BaseFragment() {
                 }
                 if (results.size == questions!!.size) {
                     Log.e("total", (total / questions!!.size).toString())
+                    DataManager.chapterExamResults[chapter!!.id] = results
                     activity?.inTransaction {
                         replace(
                             R.id.root,

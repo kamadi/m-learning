@@ -2,65 +2,76 @@ package kz.kamadi.mlearning.model
 
 object DataManager {
 
-    val chapters: List<Chapter> = listOf(
-        Chapter(
-            1, "Chapter 1", listOf(
-                Question(
-                    "Question 1",
-                    listOf(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                        "Answer 2",
-                        "Answer 3",
-                        "Answer 4"
+    val chapters = LinkedHashMap<Int, Chapter>().apply {
+        put(
+            1, Chapter(
+                1, "Chapter 1", listOf(
+                    Question(
+                        "Question 1",
+                        listOf(
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
+                        ),
+                        listOf(0),
+                        topicId = 11
                     ),
-                    listOf(0)
-                ),
-                Question(
-                    "Question 2 multiple",
-                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
-                    listOf(0, 1),
-                    type = QuestionType.MULTIPLE
-                ),
-                Question(
-                    "Question 3",
-                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
-                    listOf(2)
-                ),
-                Question(
-                    "Question 4",
-                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
-                    listOf(3)
-                ),
-                Question(
-                    "Question 5",
-                    listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
-                    listOf(3)
+                    Question(
+                        "Question 2 multiple",
+                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        listOf(0, 1),
+                        type = QuestionType.MULTIPLE,
+                        topicId = 12
+                    ),
+                    Question(
+                        "Question 3",
+                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        listOf(2),
+                        topicId = 13
+                    ),
+                    Question(
+                        "Question 4",
+                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        listOf(3),
+                        topicId = 14
+                    ),
+                    Question(
+                        "Question 5",
+                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        listOf(3),
+                        topicId = 15
+                    )
                 )
             )
-        ),
-        Chapter(
-            2, "Chapter 2",
-            listOf(Question("", listOf(), listOf()))
-        ),
-        Chapter(
-            3, "Chapter 3",
-            listOf(Question("", listOf(), listOf()))
-        ),
-        Chapter(
-            4, "Chapter 4",
-            listOf(Question("", listOf(), listOf()))
-        ),
-        Chapter(
-            5, "Chapter 5",
-            listOf(Question("", listOf(), listOf()))
         )
-    )
+        put(
+            2, Chapter(
+                2, "Chapter 2",
+                listOf(Question("", listOf(), listOf()))
+            )
+        )
+        put(
+            3, Chapter(
+                3, "Chapter 3",
+                listOf(Question("", listOf(), listOf()))
+            )
+        )
+        put(
+            4, Chapter(
+                4, "Chapter 3",
+                listOf(Question("", listOf(), listOf()))
+            )
+        )
+    }
 
     val topics = mutableMapOf<Int, List<Topic>>()
 
     val questions = mutableMapOf<Int, List<Question>>()
 
     val topicResults = mutableMapOf<Int, List<QuestionResult>>()
+
+    val chapterExamResults = mutableMapOf<Int, List<QuestionResult>>()
 
     init {
         topics[1] = listOf(

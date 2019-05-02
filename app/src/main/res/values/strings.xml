@@ -5,4 +5,5 @@
     <string name="finish">Finish</string>
     <string name="fill_all_question">You have unanswered questions</string>
     <string name="pass_exam">Pass exam</string>
+    <string name="failed_topics">Failed topics</string>
 </resources>

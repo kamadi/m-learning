@@ -15,7 +15,8 @@ class ChapterFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView.adapter = ChapterAdapter(DataManager.chapters) {
+        val chapters = DataManager.chapters.map { it.value }
+        recyclerView.adapter = ChapterAdapter(chapters) {
             requireActivity().supportFragmentManager.inTransaction {
                 replace(R.id.root, TopicsFragment.newInstance(it))
                 addToBackStack(TopicsFragment::class.java.simpleName)

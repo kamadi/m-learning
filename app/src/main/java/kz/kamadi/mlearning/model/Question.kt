@@ -1,12 +1,8 @@
 package kz.kamadi.mlearning.model
 
 import android.os.Parcelable
-import android.util.Log
-import android.view.View
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
-import kz.kamadi.mlearning.R
-import kz.kamadi.mlearning.extension.showMessage
 
 @Parcelize
 data class Question(
@@ -14,7 +10,8 @@ data class Question(
     val answers: List<String>,
     val rightAnswerIndexes: List<Int>,
     val difficulty: QuestionDifficulty = QuestionDifficulty.EASY,
-    val type: QuestionType = QuestionType.DEFAULT
+    val type: QuestionType = QuestionType.DEFAULT,
+    val topicId: Int? = null
 ) : Parcelable {
 
     @IgnoredOnParcel
@@ -61,6 +58,6 @@ enum class QuestionType {
     DEFAULT, OPEN, MULTIPLE
 }
 
-enum class QuestionDifficulty(weight: Int) {
-    HARD(1), MEDIUM(2), EASY(3), TOPIC(1)
+enum class QuestionDifficulty(val weight: Double) {
+    HARD(1.0), MEDIUM(2.0), EASY(3.0), TOPIC(1.0)
 }

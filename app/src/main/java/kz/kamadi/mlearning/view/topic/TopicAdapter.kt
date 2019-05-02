@@ -11,11 +11,16 @@ import kz.kamadi.mlearning.model.Topic
 
 class TopicAdapter(
     private val topics: List<Topic>,
+    private val showFinished: Boolean = true,
     private val onItemClickListener: (Topic) -> Unit
 ) : RecyclerView.Adapter<TopicViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopicViewHolder {
-        return TopicViewHolder(parent.inflate(R.layout.item_topic), onItemClickListener)
+        return TopicViewHolder(
+            parent.inflate(R.layout.item_topic),
+            showFinished,
+            onItemClickListener
+        )
     }
 
     override fun getItemCount(): Int = topics.size
@@ -27,6 +32,7 @@ class TopicAdapter(
 
 class TopicViewHolder(
     itemView: View,
+    private val showFinished: Boolean = true,
     private val onItemClickListener: (Topic) -> Unit
 ) : RecyclerView.ViewHolder(itemView) {
 
@@ -46,7 +52,7 @@ class TopicViewHolder(
         itemView.titleTextView.setCompoundDrawablesWithIntrinsicBounds(
             0,
             0,
-            if (DataManager.topicResults[topic.id] != null) {
+            if (DataManager.topicResults[topic.id] != null && showFinished) {
                 R.drawable.ic_check_black_24dp
             } else {
                 R.drawable.ic_next_grey
