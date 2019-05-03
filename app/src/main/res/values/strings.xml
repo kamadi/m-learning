@@ -6,4 +6,5 @@
     <string name="fill_all_question">You have unanswered questions</string>
     <string name="pass_exam">Pass exam</string>
     <string name="failed_topics">Failed topics</string>
+    <string name="your_answer">Your answer</string>
 </resources>

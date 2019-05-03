@@ -3,6 +3,7 @@ package kz.kamadi.mlearning.model
 import android.os.Parcelable
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
+import kz.kamadi.mlearning.extension.similarity
 
 @Parcelize
 data class Question(
@@ -19,6 +20,9 @@ data class Question(
 
     @IgnoredOnParcel
     var userAnswerIndexes = emptyList<Int>()
+
+    @IgnoredOnParcel
+    var userAnswer: String? = null
 
     val finalPercent: Double
         get() {
@@ -37,11 +41,14 @@ data class Question(
                     return (count * 1.0) / rightAnswerIndexes.size
                 }
             }
+            if (type == QuestionType.OPEN && userAnswer != null) {
+                return similarity(userAnswer!!, answers[0])
+            }
             return .0
         }
 
     val hasAnswer: Boolean
-        get() = userAnswerIndexes.isNotEmpty() || userAnswerIndex != -1
+        get() = userAnswerIndexes.isNotEmpty() || userAnswerIndex != -1 || !userAnswer.isNullOrEmpty()
 
     fun clear() {
         userAnswerIndex = -1
@@ -59,5 +66,5 @@ enum class QuestionType {
 }
 
 enum class QuestionDifficulty(val weight: Double) {
-    HARD(1.0), MEDIUM(2.0), EASY(3.0), TOPIC(1.0)
+    HARD(1.0), MEDIUM(2.0), EASY(3.0), TOPIC(1.0), OPEN(2.0)
 }

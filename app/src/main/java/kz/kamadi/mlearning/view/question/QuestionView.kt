@@ -2,19 +2,26 @@ package kz.kamadi.mlearning.view.question
 
 import android.content.Context
 import android.os.Build
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import kz.kamadi.mlearning.R
 import kz.kamadi.mlearning.model.Question
 import kz.kamadi.mlearning.model.QuestionType
 
-class QuestionView : LinearLayout {
+class QuestionView : LinearLayout, TextWatcher {
 
     private lateinit var titleTextView: TextView
+
+    private lateinit var answerEditText: EditText
 
     private var answerButtons = listOf<Button>()
 
@@ -50,6 +57,8 @@ class QuestionView : LinearLayout {
     private fun init(attrs: AttributeSet?) {
         inflate(context, R.layout.view_question, this)
         titleTextView = findViewById(R.id.titleTextView)
+        answerEditText = findViewById(R.id.answerEditText)
+        answerEditText.addTextChangedListener(this)
         answerButtons = listOf(
             findViewById(R.id.answer1Button),
             findViewById(R.id.answer2Button),
@@ -61,12 +70,23 @@ class QuestionView : LinearLayout {
         }
     }
 
+
+    override fun afterTextChanged(s: Editable?) {
+        question?.userAnswer = s?.toString()
+    }
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
     fun setQuestion(question: Question) {
         this.question = question
         titleTextView.text = question.question
         for (i in 0 until answerButtons.size) {
             answerButtons[i].text = question.answers.getOrNull(i)
+            answerButtons[i].isGone = question.type == QuestionType.OPEN
         }
+        answerEditText.isVisible = question.type == QuestionType.OPEN
     }
 
     private fun validateAnswer() {

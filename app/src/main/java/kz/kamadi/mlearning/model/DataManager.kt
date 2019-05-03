@@ -214,6 +214,14 @@ object DataManager {
                 "Question 5",
                 listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
                 listOf(3)
+            ),
+            Question(
+                "Question 6",
+                listOf(
+                    "Answer"
+                ),
+                listOf(0),
+                type = QuestionType.OPEN
             )
         )
         questions[12] = listOf(

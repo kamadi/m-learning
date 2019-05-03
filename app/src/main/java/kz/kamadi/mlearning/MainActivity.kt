@@ -1,9 +1,11 @@
 package kz.kamadi.mlearning
 
 import android.os.Bundle
+import android.util.Log
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import kz.kamadi.mlearning.extension.inTransaction
+import kz.kamadi.mlearning.extension.similarity
 import kz.kamadi.mlearning.view.BaseFragment
 import kz.kamadi.mlearning.view.chapter.ChapterFragment
 
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.inTransaction {
             replace(R.id.root, ChapterFragment())
         }
+        Log.e("sim", similarity("test","TEST").toString())
     }
 
     override fun onBackPressed() {

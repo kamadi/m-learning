@@ -16,35 +16,42 @@
     <Button
         android:id="@+id/answer1Button"
         style="@style/QuestionButton"
-        android:layout_marginTop="@dimen/margin_standard"
         android:layout_width="match_parent"
-        tools:text="Answer 1"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        tools:text="Answer 1" />
 
 
     <Button
         android:id="@+id/answer2Button"
         style="@style/QuestionButton"
-        android:layout_marginTop="@dimen/margin_standard"
         android:layout_width="match_parent"
-        tools:text="Answer 1"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        tools:text="Answer 1" />
 
 
     <Button
         android:id="@+id/answer3Button"
         style="@style/QuestionButton"
-        android:layout_marginTop="@dimen/margin_standard"
         android:layout_width="match_parent"
-        tools:text="Answer 1"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        tools:text="Answer 1" />
 
 
     <Button
         android:id="@+id/answer4Button"
         style="@style/QuestionButton"
-        android:layout_marginTop="@dimen/margin_standard"
         android:layout_width="match_parent"
-        tools:text="Answer 1"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_standard"
+        tools:text="Answer 1" />
+
+    <EditText
+        android:id="@+id/answerEditText"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/your_answer" />
 </LinearLayout>
