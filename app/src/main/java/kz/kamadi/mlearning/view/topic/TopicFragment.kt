@@ -36,7 +36,13 @@ class TopicFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        contentTextView.text = topic?.content
+        if (topic != null) {
+            if (topic?.content.isNullOrEmpty()) {
+                webView.loadUrl("file:///android_asset/${topic!!.id}.html")
+            } else {
+                webView.loadDataWithBaseURL("", topic?.content, "text/html", "UTF-8", "")
+            }
+        }
         nextButton.setOnClickListener {
             if (topic != null) {
                 activity?.supportFragmentManager?.inTransaction {

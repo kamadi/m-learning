@@ -5,7 +5,7 @@ object DataManager {
     val chapters = LinkedHashMap<Int, Chapter>().apply {
         put(
             1, Chapter(
-                1, "Chapter 1", listOf(
+                1, "Computer fundamentals", listOf(
                     Question(
                         "Question 1",
                         listOf(
@@ -77,28 +77,28 @@ object DataManager {
         topics[1] = listOf(
             Topic(
                 11,
-                "1Topic 1",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
+                "Overview",
+                ""
             ),
             Topic(
                 12,
-                "2Topic 2",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
+                "Applications",
+                ""
             ),
             Topic(
                 13,
-                "3Topic 3",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
+                "CPU",
+                ""
             ),
             Topic(
                 14,
-                "4Topic 4",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
+                "Memory",
+                ""
             ),
             Topic(
                 15,
-                "5Topic 5",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum. Integer sed mi maximus, pulvinar diam ut, iaculis diam. Suspendisse auctor neque velit, ut rutrum ipsum elementum pretium. Donec eu malesuada augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis et lorem eros. Ut ullamcorper neque at tristique gravida. Sed eget pulvinar elit. Quisque non odio vitae orci aliquet auctor sit amet sit amet augue. Donec tincidunt, neque a elementum vehicula, erat dui volutpat leo, a rhoncus neque turpis eu dolor. In hac habitasse platea dictumst. Aliquam nisl ante, facilisis feugiat nulla eu, molestie ultricies dolor. Nulla ac faucibus dui. Suspendisse sed sapien non lorem eleifend finibus vitae vitae sem"
+                "Random Access Memory",
+                ""
             )
         )
         topics[2] = listOf(
@@ -234,6 +234,14 @@ object DataManager {
                     "Answer 4"
                 ),
                 listOf(0)
+            ),
+            Question(
+                "Question 2",
+                listOf(
+                    "Answer"
+                ),
+                listOf(0),
+                type = QuestionType.OPEN
             )
         )
         questions[13] = listOf(
