@@ -47,19 +47,19 @@ object DataManager {
         )
         put(
             2, Chapter(
-                2, "Chapter 2",
+                2, "Information system",
                 listOf(Question("", listOf(), listOf()))
             )
         )
         put(
             3, Chapter(
-                3, "Chapter 3",
+                3, "Database",
                 listOf(Question("", listOf(), listOf()))
             )
         )
         put(
             4, Chapter(
-                4, "Chapter 3",
+                4, "System design",
                 listOf(Question("", listOf(), listOf()))
             )
         )
@@ -185,18 +185,18 @@ object DataManager {
 
         questions[11] = listOf(
             Question(
-                "Question 1",
+                "Which of the following languages is more suited to a structured program?",
                 listOf(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "PL/1",
+                    "FORTRAN",
+                    "BASIC",
+                    "PASCAL"
                 ),
                 listOf(0)
             ),
             Question(
-                "Question 2 multiple",
-                listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                "A computer assisted method for the recording and analyzing of existing or hypothetical systems is",
+                listOf("Data transmission", "Data flow", "Data capture", "Data processing "),
                 listOf(0, 1),
                 type = QuestionType.MULTIPLE
             ),
