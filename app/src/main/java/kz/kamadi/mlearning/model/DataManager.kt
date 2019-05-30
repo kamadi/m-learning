@@ -7,38 +7,38 @@ object DataManager {
             1, Chapter(
                 1, "Computer fundamentals", listOf(
                     Question(
-                        "Question 1",
+                        "A collection of interrelated file  in computer is a-",
                         listOf(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                            "Answer 2",
-                            "Answer 3",
-                            "Answer 4"
+                            "File manager",
+                            "Field",
+                            "Record",
+                            "Database"
                         ),
                         listOf(0),
                         topicId = 11
                     ),
                     Question(
-                        "Question 2 multiple",
-                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        "A collection of 8 bit is called -",
+                        listOf("Byte", "Record", "Word", "Nibble"),
                         listOf(0, 1),
                         type = QuestionType.MULTIPLE,
                         topicId = 12
                     ),
                     Question(
-                        "Question 3",
-                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        "Magnetic storage devices can represent binary 0 by the absence of?",
+                        listOf("A magnetic field", "Magnetic tape", "Static electricity", "It cannot possible."),
                         listOf(2),
                         topicId = 13
                     ),
                     Question(
-                        "Question 4",
-                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        "A device for converting handwritten impressions into coded characters & positional coordinates for input to a computer is",
+                        listOf("Touch panel", "Mouse", "Wand", "Writing tablet"),
                         listOf(3),
                         topicId = 14
                     ),
                     Question(
-                        "Question 5",
-                        listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                        "The first electronic digital computer contained?",
+                        listOf("Electronic valves", "Vacuum tubes", "Transistors", "Semiconductor memory"),
                         listOf(3),
                         topicId = 15
                     )
@@ -201,42 +201,42 @@ object DataManager {
                 type = QuestionType.MULTIPLE
             ),
             Question(
-                "Question 3",
-                listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                "Which protocol provides e-mail facility among different hosts?",
+                listOf("FTP", "SMTP", "TELNET", "SNMP"),
                 listOf(2)
             ),
             Question(
-                "Question 4",
-                listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
+                "The basic architecture of computer was developed by",
+                listOf("John Von Neumann", "Charles Babbage", "Blaise Pascal", "Garden Moore"),
                 listOf(3)
             ),
             Question(
-                "Question 5",
-                listOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"),
-                listOf(3)
-            ),
-            Question(
-                "Question 6",
+                "A light sensitive device that converts drawing, printed text or other images into digital form is",
                 listOf(
                     "Answer"
                 ),
                 listOf(0),
                 type = QuestionType.OPEN
+            ),
+            Question(
+                "In how many generations a computer can be classified?",
+                listOf("3", "4", "5", "6"),
+                listOf(3)
             )
         )
         questions[12] = listOf(
             Question(
-                "Question 1",
+                "Which of the following is the product of data processing?",
                 listOf(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "Information",
+                    "Data",
+                    "Software Program",
+                    "System"
                 ),
                 listOf(0)
             ),
             Question(
-                "Question 2",
+                "DNS in internet technology stands for",
                 listOf(
                     "Answer"
                 ),
@@ -246,36 +246,36 @@ object DataManager {
         )
         questions[13] = listOf(
             Question(
-                "Question 1",
+                "What is the correct association between a hardware component and a computer function?",
                 listOf(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "Monitor > input",
+                    "Mouse > input",
+                    "CPU > storage",
+                    "Hard disk > processing"
                 ),
                 listOf(0)
             )
         )
         questions[14] = listOf(
             Question(
-                "Question 1",
+                "The most recent version of the Mac OS is based on the ......... operating system.",
                 listOf(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "Windows",
+                    "Linux",
+                    "Unix",
+                    "CMOS"
                 ),
                 listOf(0)
             )
         )
         questions[15] = listOf(
             Question(
-                "Question 1",
+                "A websites main page is called its-",
                 listOf(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tristique dui, eget condimentum ipsum.",
-                    "Answer 2",
-                    "Answer 3",
-                    "Answer 4"
+                    "Home page",
+                    "Browser page",
+                    "Bookmark page",
+                    "Search page"
                 ),
                 listOf(0)
             )
