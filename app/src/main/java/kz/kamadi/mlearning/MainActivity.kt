@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kz.kamadi.mlearning.extension.inTransaction
 import kz.kamadi.mlearning.extension.similarity
 import kz.kamadi.mlearning.view.BaseFragment
+import kz.kamadi.mlearning.view.auth.AuthFragment
 import kz.kamadi.mlearning.view.chapter.ChapterFragment
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportFragmentManager.inTransaction {
-            replace(R.id.root, ChapterFragment())
+            replace(R.id.root, AuthFragment())
         }
         Log.e("sim", similarity("test","TEST").toString())
     }
