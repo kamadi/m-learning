@@ -33,13 +33,13 @@ class TopicsFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         chapter = arguments?.getParcelable(CHAPTER)
-        if (chapter != null) {
-            supportActionBar?.title = chapter?.title
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (chapter != null) {
+            supportActionBar?.title = chapter?.title
+        }
         val topics = DataManager.topics[chapter!!.id]
         if (topics != null) {
             recyclerView.adapter = TopicAdapter(topics) {

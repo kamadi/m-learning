@@ -26,7 +26,12 @@ object DataManager {
                     ),
                     Question(
                         "Magnetic storage devices can represent binary 0 by the absence of?",
-                        listOf("A magnetic field", "Magnetic tape", "Static electricity", "It cannot possible."),
+                        listOf(
+                            "A magnetic field",
+                            "Magnetic tape",
+                            "Static electricity",
+                            "It cannot possible."
+                        ),
                         listOf(2),
                         topicId = 13
                     ),
@@ -38,7 +43,12 @@ object DataManager {
                     ),
                     Question(
                         "The first electronic digital computer contained?",
-                        listOf("Electronic valves", "Vacuum tubes", "Transistors", "Semiconductor memory"),
+                        listOf(
+                            "Electronic valves",
+                            "Vacuum tubes",
+                            "Transistors",
+                            "Semiconductor memory"
+                        ),
                         listOf(3),
                         topicId = 15
                     )
@@ -72,6 +82,8 @@ object DataManager {
     val topicResults = mutableMapOf<Int, List<QuestionResult>>()
 
     val chapterExamResults = mutableMapOf<Int, List<QuestionResult>>()
+
+    var failedTopics = mutableMapOf<Int, Topic>()
 
     init {
         topics[1] = listOf(
@@ -280,5 +292,13 @@ object DataManager {
                 listOf(0)
             )
         )
+    }
+
+    fun setFailed(topics: List<Topic>) {
+        failedTopics.clear()
+        failedTopics = topics.associateBy({ it.id }, { it }).toMutableMap()
+        for (topic in topics) {
+            topicResults.remove(topic.id)
+        }
     }
 }

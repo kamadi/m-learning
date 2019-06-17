@@ -11,6 +11,7 @@ import kz.kamadi.mlearning.extension.backToRoot
 import kz.kamadi.mlearning.extension.supportActionBar
 import kz.kamadi.mlearning.helper.Analyzer
 import kz.kamadi.mlearning.model.Chapter
+import kz.kamadi.mlearning.model.DataManager
 import kz.kamadi.mlearning.model.Topic
 import kz.kamadi.mlearning.view.BaseFragment
 import kz.kamadi.mlearning.view.topic.TopicAdapter
@@ -37,7 +38,6 @@ class QuestionResultFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.title = "Test result"
         chapter = arguments?.getParcelable(CHAPTER)
         if (chapter != null) {
             topics = Analyzer.analyze(chapter!!)
@@ -47,6 +47,7 @@ class QuestionResultFragment : BaseFragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        supportActionBar?.title = "Test result"
         arguments?.getDouble(RESULT)?.let {
             resultTextView.text = "${it * 100} %"
         }
@@ -54,6 +55,7 @@ class QuestionResultFragment : BaseFragment() {
             activity?.backToRoot()
         }
         if (!topics.isNullOrEmpty()) {
+            DataManager.setFailed(topics!!)
             failedTopicsTextView.isVisible = true
             recyclerView.adapter = TopicAdapter(topics!!, showFinished = false) {}
         }

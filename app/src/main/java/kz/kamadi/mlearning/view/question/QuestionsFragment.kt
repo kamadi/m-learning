@@ -37,11 +37,11 @@ class QuestionsFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         topic = arguments?.getParcelable(TOPIC)
-        supportActionBar?.title = topic?.title
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        supportActionBar?.title = topic?.title
         recyclerView.isNestedScrollingEnabled = false
         if (topic != null) {
             questions = DataManager.questions[topic!!.id]

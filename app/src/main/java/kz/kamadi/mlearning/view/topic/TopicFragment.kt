@@ -31,11 +31,11 @@ class TopicFragment : BaseFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         topic = arguments?.getParcelable(TOPIC)
-        supportActionBar?.title = topic?.title
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        supportActionBar?.title = topic?.title
         if (topic != null) {
             if (topic?.content.isNullOrEmpty()) {
                 webView.loadUrl("file:///android_asset/${topic!!.id}.html")

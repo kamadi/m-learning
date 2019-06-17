@@ -54,6 +54,8 @@ class TopicViewHolder(
             0,
             if (DataManager.topicResults[topic.id] != null && showFinished) {
                 R.drawable.ic_check_black_24dp
+            } else if (DataManager.failedTopics[topic.id] != null && showFinished) {
+                R.drawable.ic_clear_black_24dp
             } else {
                 R.drawable.ic_next_grey
             },
